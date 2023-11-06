@@ -16,6 +16,10 @@ dependencies {
     // logging interface implementation
     implementation("ch.qos.logback:logback-classic:1.4.11")
 
+    // reactor
+    implementation("io.projectreactor:reactor-core:3.5.11")
+
+
 
     testImplementation(kotlin("test"))
 }
