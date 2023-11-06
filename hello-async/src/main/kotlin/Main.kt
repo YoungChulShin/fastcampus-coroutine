@@ -1,3 +1,8 @@
+import mu.KotlinLogging
+import kotlin.math.log
+
+private val logger = KotlinLogging.logger { }
+
 fun main(args: Array<String>) {
-    println("Hello World!")
+    logger.debug("Hello world")
 }
