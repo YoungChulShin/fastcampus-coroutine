@@ -1,17 +1,22 @@
 package study.spring.coroutine.springmvc.model
 
 import jakarta.persistence.Entity
+import jakarta.persistence.EntityListeners
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
 import jakarta.persistence.MappedSuperclass
+import org.springframework.data.annotation.CreatedDate
+import org.springframework.data.annotation.LastModifiedDate
+import org.springframework.data.jpa.domain.support.AuditingEntityListener
 import java.time.LocalDateTime
 
 @Entity
+@EntityListeners(AuditingEntityListener::class)
 class Article(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Long,
+    var id: Long = 0,
     var title: String,
     var body: String,
     var authorId: Long,
@@ -33,7 +38,9 @@ class Article(
 
 @MappedSuperclass
 open class BaseEntity(
+    @CreatedDate
     var createdAt: LocalDateTime? = null,
+    @LastModifiedDate
     var updatedAt: LocalDateTime? = null,
 ) {
     override fun toString(): String {
