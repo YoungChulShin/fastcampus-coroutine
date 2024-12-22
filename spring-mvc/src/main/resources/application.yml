@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: spring-mvc
+  output:
+    ansi:
+      enabled: always
+  jpa:
+    properties:
+      hibernate:
+        # query? ?? ? ??? ?? ?? ?? ?
+        format_sql: true
+        highlight_sql: true
+
+
+logging:
+  level:
+    study.coroutine: debug
+    # query? ?? ?? ??
+    # org.hibernate.SQL: debug
+    # org.hibernate.orm.jdbc.bind: trace

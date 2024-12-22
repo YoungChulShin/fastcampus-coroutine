@@ -1,4 +1,4 @@
-package studt.coroutine.springmvc.controller
+package study.coroutine.springmvc.controller
 
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
