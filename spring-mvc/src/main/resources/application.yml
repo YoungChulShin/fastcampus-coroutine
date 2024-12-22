@@ -4,8 +4,8 @@ spring:
   output:
     ansi:
       enabled: always
-  datasource:
-    url: jdbc:h2:~/test
+#  datasource:
+#    url: jdbc:h2:~/test
   jpa:
     properties:
       hibernate:
@@ -20,5 +20,5 @@ logging:
   level:
     study.coroutine: debug
     # query? ?? ?? ??
-    # org.hibernate.SQL: debug
-    # org.hibernate.orm.jdbc.bind: trace
+    org.hibernate.SQL: debug
+    org.hibernate.orm.jdbc.bind: trace

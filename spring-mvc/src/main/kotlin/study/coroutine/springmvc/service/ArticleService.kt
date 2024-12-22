@@ -16,7 +16,7 @@ class ArticleService(
         return repository.findByIdOrNull(id) ?: throw NoArticleFound("No article found (id: $id)")
     }
 
-    fun getAll(title: String?): List<Article> {
+    fun getAll(title: String? = null): List<Article> {
         return if (title.isNullOrEmpty()) {
             repository.findAll()
         } else {
@@ -57,7 +57,7 @@ data class ReqCreate(
 )
 
 data class ReqUpdate(
-    val title: String?,
-    val body: String?,
-    val authorId: Long?,
+    val title: String? = null,
+    val body: String? = null,
+    val authorId: Long? = null,
 )
