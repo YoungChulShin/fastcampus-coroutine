@@ -5,4 +5,7 @@ import org.springframework.stereotype.Repository
 import study.coroutine.springmvc.model.Article
 
 @Repository
-interface ArticleRepository: JpaRepository<Article, Long>
+interface ArticleRepository: JpaRepository<Article, Long> {
+
+    fun findAllByTitleContains(title: String): List<Article>
+}
