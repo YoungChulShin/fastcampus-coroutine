@@ -3,6 +3,7 @@ package study.coroutine.springmvc.service
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
+import study.coroutine.springmvc.exception.NoArticleFound
 import study.coroutine.springmvc.model.Article
 import study.coroutine.springmvc.repository.ArticleRepository
 
@@ -12,14 +13,14 @@ class ArticleService(
 ) {
 
     fun get(id: Long): Article {
-        return repository.findByIdOrNull(id) ?: throw NoSuchElementException("No article found (id: $id)")
+        return repository.findByIdOrNull(id) ?: throw NoArticleFound("No article found (id: $id)")
     }
 
     fun getAll(title: String?): List<Article> {
         return if (title.isNullOrEmpty()) {
             repository.findAll()
         } else {
-            repository.findAllByTitleContains("%$title%")
+            repository.findAllByTitleContains("$title")
         }
     }
 
@@ -39,7 +40,7 @@ class ArticleService(
             request.body?.let { article.body = it }
             request.authorId?.let { article.authorId = it }
             article
-        } ?: throw NoSuchElementException("No article found (id: $id)")
+        } ?: throw NoArticleFound("No article found (id: $id)")
     }
 
     @Transactional
