@@ -1,0 +1,13 @@
+package study.coroutine.webfluxreactor
+
+import org.junit.jupiter.api.Test
+import org.springframework.boot.test.context.SpringBootTest
+
+@SpringBootTest
+class WebfluxReactorApplicationTests {
+
+    @Test
+    fun contextLoads() {
+    }
+
+}
