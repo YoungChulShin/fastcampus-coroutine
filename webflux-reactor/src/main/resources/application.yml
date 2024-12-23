@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: webflux-reactor
+  sql:
+    init:
+      mode: embedded
+      schema-locations: classpath:db-init/schema.sql
