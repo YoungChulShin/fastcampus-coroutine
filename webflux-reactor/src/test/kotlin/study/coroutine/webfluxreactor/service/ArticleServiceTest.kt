@@ -27,6 +27,8 @@ class ArticleServiceTest(
         Assertions.assertThat(readArticle.title).isEqualTo(article.title)
         Assertions.assertThat(readArticle.body).isEqualTo(article.body)
         Assertions.assertThat(readArticle.authorId).isEqualTo(article.authorId)
+        Assertions.assertThat(readArticle.createdAt).isNotNull()
+        Assertions.assertThat(readArticle.updatedAt).isNotNull()
     }
 
     @Test
