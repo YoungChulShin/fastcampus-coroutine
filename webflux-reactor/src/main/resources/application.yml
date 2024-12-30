@@ -1,7 +1,23 @@
 spring:
+  profiles:
+    active: stress
+---
+spring:
   application:
     name: webflux-reactor
   sql:
     init:
       mode: embedded
       schema-locations: classpath:db-init/schema.sql
+---
+spring:
+  config:
+    activate:
+      on-profile: stress
+  r2dbc:
+    url: r2dbc:pool:mariadb://localhost:3306/sample
+    username: user
+    password: 1234
+  sql:
+    init:
+      mode: never

@@ -3,7 +3,7 @@ POST {{domain}}/article
 Content-Type: application/json
 
 {
-  "title": "title2",
+  "title": "title333",
   "body": "body2",
   "authorId": 1234
 }

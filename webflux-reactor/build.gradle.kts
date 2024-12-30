@@ -19,6 +19,7 @@ repositories {
 }
 
 dependencies {
+    runtimeOnly("org.mariadb:r2dbc-mariadb:1.1.3")
     implementation("io.github.microutils:kotlin-logging:3.0.5")
     implementation("org.springframework.boot:spring-boot-starter-data-r2dbc")
     implementation("org.springframework.boot:spring-boot-starter-webflux")

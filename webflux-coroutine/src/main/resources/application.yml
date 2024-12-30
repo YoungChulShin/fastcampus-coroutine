@@ -1,4 +1,8 @@
 spring:
+  profiles:
+    active: stress
+---
+spring:
   output:
     ansi:
       enabled: always
@@ -19,3 +23,11 @@ spring:
       on-profile: test
   r2dbc:
     url: r2dbc:pool:h2:mem://localhost:3306/sample
+---
+spring:
+  config:
+    activate:
+      on-profile: stress
+  sql:
+    init:
+      mode: never
